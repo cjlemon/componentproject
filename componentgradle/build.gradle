@@ -1,0 +1,34 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    //gradle sdk
+    compile gradleApi()
+    //groovy sdk
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:3.2.1'
+    compile 'commons-io:commons-io:2.4'
+    compile 'org.ow2.asm:asm:6.0'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    google()
+}
+
+group='com.chenj.gradle'
+version='1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //提交到远程服务器：
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "admin", password: "admin")
+            // }
+            //本地的Maven地址设置为D:/repos
+            repository(url: uri('/Users/chenjun/developer'))
+        }
+    }
+}

@@ -1,0 +1,1 @@
+include ':app', ':mobilecomponent', ':computercomponent', ':iservice', ':uirouter', ':ComponentAnnotation', ':ComponentAnnotationProcessor', ':componentgradle'
